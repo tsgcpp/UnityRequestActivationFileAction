@@ -9,7 +9,8 @@ jobs:
       fail-fast: false
       matrix:
         unityVersion:
-          - 2020.3.12f1
+          - 2020.3.24f1
+          - 2021.2.4f1
     steps:
       # Request manual activation file
       - name: Request manual activation file
