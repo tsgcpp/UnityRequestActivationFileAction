@@ -9,8 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         unityVersion:
-          - 2020.3.24f1
-          - 2021.2.4f1
+          - 2022.2.10f1
     steps:
       # Request manual activation file
       - name: Request manual activation file
@@ -20,7 +19,7 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
       # Upload artifact (Unity_v20XX.X.XXXX.alf)
       - name: Expose as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
-          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          name: alf-${{ matrix.unityVersion }}
           path: ${{ steps.getManualLicenseFile.outputs.filePath }}
